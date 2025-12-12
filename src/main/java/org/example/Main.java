@@ -9,5 +9,6 @@ public class Main {
         lessonTwo.printColor();
         lessonTwo.receivingSum();
         lessonTwo.checkNumber();
+        lessonTwo.moreThanZero();
     }
 }
