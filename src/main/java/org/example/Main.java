@@ -7,8 +7,13 @@ public class Main {
         lessonTwo.printThreeWords();
         lessonTwo.checkSumSign();
         lessonTwo.printColor();
+        lessonTwo.compareNumbers();
         lessonTwo.receivingSum();
         lessonTwo.checkNumber();
         lessonTwo.moreThanZero();
+       //lessonTwo.printStringNTimes();
+       // lessonTwo.LeapYear();
+        lessonTwo.InvertArray();
+
     }
 }

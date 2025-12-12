@@ -54,10 +54,11 @@ public class lessonTwo {
         int b = 15;
         int sum = a + b;
         if (sum >= 10 && sum <= 20) {
-            return true;
+            System.out.println("true");
         } else {
-            return false;
+            System.out.println("false");
         }
+        return false;
     }
     // 6. Напишите метод, которому в качестве параметра передается целое число, метод должен напечатать в консоль, положительное ли
     // число передали или отрицательное. Замечание: ноль считаем положительным числом.
@@ -72,29 +73,64 @@ public class lessonTwo {
     // 7. Напишите метод, которому в качестве параметра передается целое число. Метод должен вернуть true, если число отрицательное,
     // и вернуть false если положительное. Замечание: ноль считаем положительным числом.
     static boolean moreThanZero() {
-        int a = -6;
+        int a = 0;
         if ( a < 0) {
-            return true;
+            System.out.println("true");
         } else {
-            return false;
+            System.out.println("false");
         }
-        }
+        return false;
+    }
 
     //8. Напишите метод, которому в качестве аргументов передается строка и число, метод должен отпечатать в консоль указанную строку,
     // указанное количество раз;
-
-
+      /* public static void printStringNTimes () {
+        String "Hallo", int = 3;
+        if (int < 0) {
+            System.out.println("Количество повторений не может быть отрицательным.");
+            return;
+        }
+        for (int i = 0; i < int; i++) {
+            System.out.println (String);
+        }
+    }*/
     //9. Напишите метод, который определяет, является ли год високосным, и возвращает boolean (високосный - true, не високосный - false).
     // Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.
-
+    /*public static boolean LeapYear () {
+        int year = 1996;
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    }
+    public static void main(String[] args) {
+        int year1 = 2025;
+        int year2 = 1995;
+        int year3 = 2000;
+        int year4 = 2023;
+        System.out.println(year1 + " високосный? " + LeapYear(year1));
+        System.out.println(year2 + " високосный? " + LeapYear(year2));
+        System.out.println(year3 + " високосный? " + LeapYear(year3));
+        System.out.println(year4 + " високосный? " + LeapYear(year4));
+    }
+}*/
 
     //10. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].
     // С помощью цикла и условия заменить 0 на 1, 1 на 0;
+            public static void InvertArray () {
+            int[] array = {0, 0, 0, 1, 1, 0, 1, 1, 0, 1};
 
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] == 0) {
+                    array[i] = 1;
+                } else {
+                    array[i] = 0;
+                }
+            }
 
+            for (int i = 0; i < array.length; i++) {
+                System.out.print(array[i] + " ");
+            }
+        }
+    }
     //11. Задать пустой целочисленный массив длиной 100. С помощью цикла заполнить его значениями 1 2 3 4 5 6 7 8 ... 100;
-
-
 
     //12. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом, и числа меньшие 6 умножить на 2;
 
@@ -105,5 +141,4 @@ public class lessonTwo {
     //14. Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий одномерный массив типа int длиной len,
     // каждая ячейка которого равна initialValue.
 
-}
 
