@@ -181,15 +181,15 @@ public class lessonTwo {
     }
         //14. Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий одномерный массив типа int длиной len,
     // каждая ячейка которого равна initialValue.
-        public static int[] createFilledArray () {
+        public static void createFilledArray () {
             int len = 5;
             int initialValue = 15;
             int[] arr = new int[len];
-
-            for (int i = 0; i < len; i++) {
+            for (int i = 0; i < arr.length; i++){
                 arr[i] = initialValue;
             }
-            return arr;
+            System.out.println(Arrays.toString(arr));
+            System.out.println( );
         }
 }
 
