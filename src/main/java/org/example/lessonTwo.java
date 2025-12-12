@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+
 public class lessonTwo {
     //1. Создайте метод printThreeWords(), который при вызове должен отпечатать в столбец три слова: Orange, Banana, Apple
     public void printThreeWords() {
@@ -139,6 +141,7 @@ public class lessonTwo {
         for (int i = 0; i < 100; i++) {
             array[i] = i + 1;
         }
+        System.out.println(Arrays.toString(array));
     }
 
     //12. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом, и числа меньшие 6 умножить на 2;
@@ -151,15 +154,30 @@ public class lessonTwo {
             }
         }
         for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i] + " ");
+            System.out.print(array[i] + " ");
         }
     }
-}
+
     //13. Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое), и с помощью цикла(-ов)
     // заполнить его диагональные элементы единицами (можно только одну из диагоналей, если обе сложно). Определить элементы одной из
     // диагоналей можно по следующему принципу: индексы таких элементов равны, то есть [0][0], [1][1], [2][2], ..., [n][n];
+    public static void TwoArraylength() {
+        int size = 7;
+        int[][] matrix = new int[size][size];
 
-    //14. Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий одномерный массив типа int длиной len,
+        for (int i = 0; i < size; i++) {
+            matrix[i][i] = 1;
+        }
+       System.out.println("Массив с заполненной главной диагональю:");
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+        //14. Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий одномерный массив типа int длиной len,
     // каждая ячейка которого равна initialValue.
 
 

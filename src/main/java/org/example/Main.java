@@ -16,6 +16,7 @@ public class Main {
         lessonTwo.InvertArray();
         lessonTwo.Array();
         lessonTwo.Arraylength();
+        lessonTwo.TwoArraylength();
 
     }
 }
