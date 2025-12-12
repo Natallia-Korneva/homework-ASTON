@@ -15,6 +15,7 @@ public class Main {
        // lessonTwo.LeapYear();
         lessonTwo.InvertArray();
         lessonTwo.Array();
+        lessonTwo.Arraylength();
 
     }
 }
