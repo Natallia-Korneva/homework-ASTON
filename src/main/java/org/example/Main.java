@@ -7,6 +7,6 @@ public class Main {
         lessonTwo.printThreeWords();
         lessonTwo.checkSumSign();
         lessonTwo.printColor();
-        lessonTwo.compareNumbers();
+        lessonTwo.receivingSum();
     }
 }
