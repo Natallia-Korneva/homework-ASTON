@@ -1,5 +1,4 @@
 package org.example;
-import org.example.lessonTwo;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,12 +10,12 @@ public class Main {
         lessonTwo.receivingSum();
         lessonTwo.checkNumber();
         lessonTwo.moreThanZero();
-       //lessonTwo.printStringNTimes();
+        lessonTwo.printStringNTimes();
        // lessonTwo.LeapYear();
         lessonTwo.InvertArray();
         lessonTwo.Array();
         lessonTwo.Arraylength();
         lessonTwo.TwoArraylength();
-
+        lessonTwo.createFilledArray();
     }
 }

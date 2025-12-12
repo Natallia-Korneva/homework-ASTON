@@ -89,16 +89,18 @@ public class lessonTwo {
 
     //8. Напишите метод, которому в качестве аргументов передается строка и число, метод должен отпечатать в консоль указанную строку,
     // указанное количество раз;
-      /* public static void printStringNTimes () {
-        String "Hallo", int = 3;
-        if (int < 0) {
-            System.out.println("Количество повторений не может быть отрицательным.");
-            return;
-        }
-        for (int i = 0; i < int; i++) {
-            System.out.println (String);
-        }
-    }*/
+    public static void printStringNTimes() {
+        String text = "Hallo";
+        int count = 5;
+            if (count > 0) {
+                for (int i = 0; i < count; i++) {
+                    System.out.println(text);
+                }
+            } else {
+                System.out.println("Количество повторений должно быть положительным числом.");
+            }
+      }
+
     //9. Напишите метод, который определяет, является ли год високосным, и возвращает boolean (високосный - true, не високосный - false).
     // Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.
     /*public static boolean LeapYear () {
@@ -133,6 +135,7 @@ public class lessonTwo {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
+        System.out.println( );
     }
 
     //11. Задать пустой целочисленный массив длиной 100. С помощью цикла заполнить его значениями 1 2 3 4 5 6 7 8 ... 100;
@@ -142,6 +145,7 @@ public class lessonTwo {
             array[i] = i + 1;
         }
         System.out.println(Arrays.toString(array));
+        System.out.println( );
     }
 
     //12. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом, и числа меньшие 6 умножить на 2;
@@ -156,6 +160,7 @@ public class lessonTwo {
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
         }
+        System.out.println( );
     }
 
     //13. Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое), и с помощью цикла(-ов)
@@ -176,8 +181,19 @@ public class lessonTwo {
             System.out.println();
         }
     }
-}
         //14. Написать метод, принимающий на вход два аргумента: len и initialValue, и возвращающий одномерный массив типа int длиной len,
     // каждая ячейка которого равна initialValue.
+        public static int[] createFilledArray () {
+            int len = 5;
+            int initialValue = 15;
+            int[] arr = new int[len];
+
+            for (int i = 0; i < len; i++) {
+                arr[i] = initialValue;
+            }
+            return arr;
+        }
+}
+
 
 
