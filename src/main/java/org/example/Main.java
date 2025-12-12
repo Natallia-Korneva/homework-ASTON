@@ -8,5 +8,6 @@ public class Main {
         lessonTwo.checkSumSign();
         lessonTwo.printColor();
         lessonTwo.receivingSum();
+        lessonTwo.checkNumber();
     }
 }
