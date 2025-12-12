@@ -14,6 +14,7 @@ public class Main {
        //lessonTwo.printStringNTimes();
        // lessonTwo.LeapYear();
         lessonTwo.InvertArray();
+        lessonTwo.Array();
 
     }
 }
