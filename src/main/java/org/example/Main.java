@@ -6,5 +6,6 @@ public class Main {
         lessonTwo lessonTwo = new lessonTwo();
         lessonTwo.printThreeWords();
         lessonTwo.checkSumSign();
+        lessonTwo.printColor();
     }
 }
