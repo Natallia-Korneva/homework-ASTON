@@ -11,7 +11,7 @@ public class Main {
         lessonTwo.checkNumber();
         lessonTwo.moreThanZero();
         lessonTwo.printStringNTimes();
-       // lessonTwo.LeapYear();
+        lessonTwo.LeapYear();
         lessonTwo.InvertArray();
         lessonTwo.Array();
         lessonTwo.Arraylength();

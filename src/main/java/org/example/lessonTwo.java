@@ -92,33 +92,31 @@ public class lessonTwo {
     public static void printStringNTimes() {
         String text = "Hallo";
         int count = 5;
-            if (count > 0) {
-                for (int i = 0; i < count; i++) {
-                    System.out.println(text);
-                }
-            } else {
-                System.out.println("Количество повторений должно быть положительным числом.");
+        if (count > 0) {
+            for (int i = 0; i < count; i++) {
+                System.out.println(text);
             }
-      }
+        } else {
+            System.out.println("Количество повторений должно быть положительным числом.");
+        }
+    }
 
     //9. Напишите метод, который определяет, является ли год високосным, и возвращает boolean (високосный - true, не високосный - false).
     // Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.
-    /*public static boolean LeapYear () {
-        int year = 1996;
-        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    public static boolean LeapYear() {
+        int year = 2025;
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                if (year % 400 == 0) {
+                    System.out.println("true");
+                } else
+                    System.out.println("false");
+            }
+            System.out.println("true");
+        } else
+            System.out.println("false");
+        return false;
     }
-    public static void main(String[] args) {
-        int year1 = 2025;
-        int year2 = 1995;
-        int year3 = 2000;
-        int year4 = 2023;
-        System.out.println(year1 + " високосный? " + LeapYear(year1));
-        System.out.println(year2 + " високосный? " + LeapYear(year2));
-        System.out.println(year3 + " високосный? " + LeapYear(year3));
-        System.out.println(year4 + " високосный? " + LeapYear(year4));
-    }
-}*/
-
     //10. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].
     // С помощью цикла и условия заменить 0 на 1, 1 на 0;
     public static void InvertArray() {
