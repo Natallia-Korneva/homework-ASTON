@@ -16,8 +16,7 @@ public class lessonTwo {
     public void checkSumSign() {
         int a = 10;
         int b = -20;
-        int sum = a + b;
-        if (sum >= 0) {
+        if (a+b >= 0) {
             System.out.println("Сумма положительная");
         } else {
             System.out.println("Сумма отрицательная");
@@ -55,8 +54,7 @@ public class lessonTwo {
     public boolean receivingSum() {
         int a = 0;
         int b = 15;
-        int sum = a + b;
-        if (sum >= 10 && sum <= 20) {
+        if (a+b >= 10 && a+b <= 20) {
             System.out.println("true");
         } else {
             System.out.println("false");
