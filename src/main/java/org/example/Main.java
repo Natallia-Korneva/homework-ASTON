@@ -1,5 +1,8 @@
 package org.example;
 
+import java.util.Arrays;
+import java.awt.Color;
+
 public class Main {
     public static void main(String[] args) {
         lessonTwo lessonTwo = new lessonTwo();
@@ -26,5 +29,50 @@ public class Main {
         productsArray[4] = new Product("Haier 65 Mini LED", "01.02.2025","Haier Overseas Electric Appliances Corp.", "Chinaa", 7878, true).displayInfo();
 
         Park.Attraction attraction = new Park("Парк Горького").new Attraction("Круглосуточно (павильоны и каток: 10:00 – 23:00)", "Вход бесплатный; прокат инвентаря и аттракционы — платно").displayInfo();
+
+        System.out.println("-----------------------------------------------------------------------------------");
+
+        Cat catBarsik = new Cat("Барсик");
+        Cat catBoris = new Cat("Борис");
+        Dog dogBobik = new Dog("Бобик");
+
+        // Выполняем действия
+        catBarsik.performRun(180);
+        catBarsik.performSwim(5);
+        catBoris.performRun(1000);
+        dogBobik.performRun(450);
+        dogBobik.performSwim(8);
+
+        // Подсчет количества животных
+        System.out.println("Всего создано животных: " + Animal.getAnimalCount());
+        System.out.println("Количество кошек: " + Cat.getCatCount());
+        System.out.println("Количество собак: " + Dog.getDogCount());
+
+        Cat[] cats = new Cat[]{
+                new Cat("Барсик"),
+                new Cat("Васёк"),
+                new Cat("Матроскин")
+        };
+
+        Bowl bowl = new Bowl(25);
+
+        bowl.eatFromBowl(cats[0], 15);
+
+        Arrays.stream(cats)
+                .forEach(cat -> System.out.println(cat.getName() + " сыт: " + cat.isSatiated()));
+
+        bowl.addFood(10); // добавляем ещё еды
+
+
+        System.out.println("-----------------------------------------------------------------------------------");
+
+
+        ColoredShape circle = new Circle(5, Color.BLUE, Color.RED); // Радиус 5 см, синий фон, красная граница
+        ColoredShape rectangle = new Rectangle(8, 4, Color.GREEN, Color.BLACK); // Ширина 8 см, высота 4 см, зеленый фон, черная граница
+        ColoredShape triangle = new Triangle(3, 4, 5, Color.YELLOW, Color.ORANGE); // Стороны 3, 4, 5 см, желтый фон, оранжевая граница
+
+        ShapePrinter.printShapeInfo(circle);
+        ShapePrinter.printShapeInfo(rectangle);
+        ShapePrinter.printShapeInfo(triangle);
     }
 }
