@@ -22,11 +22,11 @@ public class Main {
 
         //2. Создать массив из 5 товаров.
         Product[] productsArray = new Product[5];
-        productsArray[0] = new Product("Samsung S25 Ultra", "01.02.2025","Samsung Corp.", "Korea", 5599, true).displayInfo();
-        productsArray[1] = new Product("LG20", "10.01.2023","LG Corp.", "Korea", 6600, true).displayInfo();
-        productsArray[2] = new Product("TLC65QLED780K", "01.01.2024","Issy-Les Moulineaux", "France", 7000, true).displayInfo();
-        productsArray[3] = new Product("FOX 42WOS640E", "24.03.2020","JIN PIN ELECTRICAL COMPANY LTD", "China", 9900, true).displayInfo();
-        productsArray[4] = new Product("Haier 65 Mini LED", "01.02.2025","Haier Overseas Electric Appliances Corp.", "Chinaa", 7878, true).displayInfo();
+        productsArray[0] = new Product("Samsung S25 Ultra", "01.02.2025", "Samsung Corp.", "Korea", 5599, true).displayInfo();
+        productsArray[1] = new Product("LG20", "10.01.2023", "LG Corp.", "Korea", 6600, true).displayInfo();
+        productsArray[2] = new Product("TLC65QLED780K", "01.01.2024", "Issy-Les Moulineaux", "France", 7000, true).displayInfo();
+        productsArray[3] = new Product("FOX 42WOS640E", "24.03.2020", "JIN PIN ELECTRICAL COMPANY LTD", "China", 9900, true).displayInfo();
+        productsArray[4] = new Product("Haier 65 Mini LED", "01.02.2025", "Haier Overseas Electric Appliances Corp.", "Chinaa", 7878, true).displayInfo();
 
         Park.Attraction attraction = new Park("Парк Горького").new Attraction("Круглосуточно (павильоны и каток: 10:00 – 23:00)", "Вход бесплатный; прокат инвентаря и аттракционы — платно").displayInfo();
 
@@ -74,5 +74,64 @@ public class Main {
         ShapePrinter.printShapeInfo(circle);
         ShapePrinter.printShapeInfo(rectangle);
         ShapePrinter.printShapeInfo(triangle);
+
+        System.out.println("-----------------------------------------------------------------------------------");
+
+        // В методе main() вызвать полученный метод, обработать возможные исключения MyArraySizeException и MyArrayDataException и вывести результат расчета.
+        String[][] validArray = {{"1", "2", "3", "4"},
+                {"7", "7", "7", "7"},
+                {"10", "10", "10", "10"},
+                {"12", "12", "12", "12"}};
+
+        String[][] invalidSizeArray = {{"1", "2"}, {"3", "4"}};
+
+        String[][] invalidDataArray = {{"1", "2", "3", "4"},
+                {"5", "6", "7", "8"},
+                {"9", "10", "11", "12"},
+                {"13", "f", "15", "16"}};
+// Напишите код для генерации и поимки ArrayIndexOutOfBoundsException.
+        int[] myArray = {1, 2, 3};
+
+        try {
+            System.out.println(processArray(validArray));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.err.println(e.getMessage());
+        }
+
+        try {
+            System.out.println(processArray(invalidSizeArray));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.err.println(e.getClass().getSimpleName());
+        }
+
+        try {
+            System.out.println(processArray(invalidDataArray));
+        } catch (MyArraySizeException | MyArrayDataException e) {
+            System.err.println(e);
+        }
+
+        try {
+            System.out.println(myArray[3]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.err.println("Возникло исключение: " + e.getMessage());
+        }
+
+        }
+
+    public static int processArray(String[][] array) throws MyArraySizeException, MyArrayDataException {
+        if (array.length != 4 || array[0].length != 4)
+            throw new MyArraySizeException();
+
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                try {
+                    sum += Integer.parseInt(array[i][j]);
+                } catch (NumberFormatException e) {
+                    throw new MyArrayDataException("[" + i + ", " + j + "]");
+                }
+            }
+        }
+        return sum;
     }
-}
+    }
