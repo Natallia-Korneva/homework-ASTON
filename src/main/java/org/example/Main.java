@@ -1,8 +1,7 @@
 package org.example;
-
 import java.util.Arrays;
 import java.awt.Color;
-
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
         lessonTwo lessonTwo = new lessonTwo();
@@ -116,7 +115,43 @@ public class Main {
             System.err.println("Возникло исключение: " + e.getMessage());
         }
 
+        // Напишите метод printStudents(Set<Student> students, int course), который получает список студентов и номер курса.
+        // Метод печатает на консоль имена тех студентов, которые обучаются на данном курсе.
+        Set<Student> students = new HashSet<>();
+        students.add(new Student("Соловей Разбойник", "А1", 1));
+        students.add(new Student("Добрыня Никитич", "А1", 2));
+        students.add(new Student("Илья Муромец", "Б2", 3));
+
+        students.forEach(student -> student.addGrade("Математика", 4));
+        students.forEach(student -> student.addGrade("Программирование", 3));
+        students.forEach(student -> student.addGrade("Английский", 5));
+
+        removeLowPerformingStudents(students);
+        promoteEligibleStudents(students);
+        printStudents(students, 2);
+    }
+
+    public static void removeLowPerformingStudents(Collection<Student> students) {
+        Iterator<Student> iterator = students.iterator();
+        while (iterator.hasNext()) {
+            Student s = iterator.next();
+            if(s.averageGrade() < 3) {
+                iterator.remove(); // удаление студента из коллекции
+            }
         }
+
+        // Заполняем справочником
+        PhoneBook book = new PhoneBook();
+
+        book.add("Добрынин", "+375296666666");
+        book.add("Добрынин", "+375293662525");
+        book.add("Долина", "++375295553636");
+        book.add("Кадышева", "+375251112222");
+
+        System.out.println(book.get("Добрынин"));
+        System.out.println(book.get("Долина"));
+        System.out.println(book.get("Мартин"));
+    }
 
     public static int processArray(String[][] array) throws MyArraySizeException, MyArrayDataException {
         if (array.length != 4 || array[0].length != 4)
@@ -133,5 +168,27 @@ public class Main {
             }
         }
         return sum;
+    }
+
+    public static void promoteEligibleStudents(Collection<Student> students) {
+        for(Student s : students) {
+            if(s.averageGrade() >= 3 && s.getCourse() != 5) {
+                s.setCourse(s.getCourse() + 1);
+            }
+        }
+    }
+
+    public static void printStudents(Set<Student> students, int course) {
+        System.out.println("Студенты " + course + "-го курса:");
+        boolean found = false;
+        for(Student s : students) {
+            if(s.getCourse() == course) {
+                System.out.println(s.getName());
+                found = true;
+            }
+        }
+        if(!found) {
+            System.out.println("Нет студентов на указанном курсе.");
+        }
     }
     }
