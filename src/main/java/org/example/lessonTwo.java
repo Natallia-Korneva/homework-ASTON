@@ -89,20 +89,12 @@ public class lessonTwo {
 
     //9. Напишите метод, который определяет, является ли год високосным, и возвращает boolean (високосный - true, не високосный - false).
     // Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.
-    public static boolean LeapYear() {
-        int year = 2025;
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                if (year % 400 == 0) {
-                    System.out.println("true");
-                } else
-                    System.out.println("false");
-            }
-            System.out.println("true");
-        } else
-            System.out.println("false");
-        return false;
+    public static boolean leapYear(int year) {
+        System.out.println("\nЗадание 9.");
+        if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))) return true;
+        else return false;
     }
+
     //10. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].
     // С помощью цикла и условия заменить 0 на 1, 1 на 0;
     public static void InvertArray() {

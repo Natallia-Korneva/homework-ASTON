@@ -11,7 +11,7 @@ public class Main {
         lessonTwo.checkNumber(0);
         System.out.println(lessonTwo.moreThanZero(-9));
         lessonTwo.printStringNTimes("Hallo", 4);
-        lessonTwo.LeapYear();
+        System.out.println(lessonTwo.leapYear(704));
         lessonTwo.InvertArray();
         lessonTwo.Array();
         lessonTwo.Arraylength();
