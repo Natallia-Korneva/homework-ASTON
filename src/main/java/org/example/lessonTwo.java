@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class lessonTwo {
     //1. Создайте метод printThreeWords(), который при вызове должен отпечатать в столбец три слова: Orange, Banana, Apple
     public void printThreeWords() {
+        System.out.println("\nЗадание 1.");
         System.out.println("Orange");
         System.out.println("Banana");
         System.out.println("Apple");
@@ -14,6 +15,7 @@ public class lessonTwo {
     // которыми захотите. Далее метод должен просуммировать эти переменные, и если их сумма больше или равна 0, то вывести в консоль
     // сообщение “Сумма положительная”, в противном случае - “Сумма отрицательная”;
     public void checkSumSign() {
+        System.out.println("\nЗадание 2.");
         int a = 10;
         int b = -20;
         if (a + b >= 0) {
@@ -27,6 +29,7 @@ public class lessonTwo {
     // Если value меньше 0 (0 включительно), то в консоль метод должен вывести сообщение “Красный”, если лежит в пределах от 0 (0 исключительно)
     // до 100 (100 включительно), то “Желтый”, если больше 100 (100 исключительно) - “Зеленый”;
     public void printColor() {
+        System.out.println("\nЗадание 3.");
         int value = 150;
         if (value <= 0) {
             System.out.println("Красный");
@@ -40,6 +43,7 @@ public class lessonTwo {
     //4. Создайте метод compareNumbers(), в теле которого объявите две int переменные a и b, и инициализируйте их любыми значениями,
     // которыми захотите. Если a больше или равно b, то необходимо вывести в консоль сообщение “a >= b”, в противном случае “a < b”;
     public void compareNumbers() {
+        System.out.println("\nЗадание 4.");
         int a = 30;
         int b = 80;
         if (a >= b) {
@@ -76,16 +80,11 @@ public class lessonTwo {
 
     //8. Напишите метод, которому в качестве аргументов передается строка и число, метод должен отпечатать в консоль указанную строку,
     // указанное количество раз;
-    public static void printStringNTimes() {
-        String text = "Hallo";
-        int count = 5;
-        if (count > 0) {
-            for (int i = 0; i < count; i++) {
-                System.out.println(text);
-            }
-        } else {
-            System.out.println("Количество повторений должно быть положительным числом.");
-        }
+    public static void printStringNTimes(String str, int count) {
+        System.out.println("\nЗадание 8.");
+        for (int i = 0; i < count; i++) {
+            System.out.println(str);
+    }
     }
 
     //9. Напишите метод, который определяет, является ли год високосным, и возвращает boolean (високосный - true, не високосный - false).

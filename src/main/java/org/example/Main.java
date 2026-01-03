@@ -10,7 +10,7 @@ public class Main {
         System.out.println(lessonTwo.isSumInRange(15,5));
         lessonTwo.checkNumber(0);
         System.out.println(lessonTwo.moreThanZero(-9));
-        lessonTwo.printStringNTimes();
+        lessonTwo.printStringNTimes("Hallo", 4);
         lessonTwo.LeapYear();
         lessonTwo.InvertArray();
         lessonTwo.Array();
