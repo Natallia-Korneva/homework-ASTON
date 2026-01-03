@@ -7,7 +7,7 @@ public class Main {
         lessonTwo.checkSumSign();
         lessonTwo.printColor();
         lessonTwo.compareNumbers();
-        lessonTwo.receivingSum();
+        System.out.println(lessonTwo.isSumInRange(15,5));
         lessonTwo.checkNumber();
         lessonTwo.moreThanZero();
         lessonTwo.printStringNTimes();
