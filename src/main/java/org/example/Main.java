@@ -8,7 +8,7 @@ public class Main {
         lessonTwo.printColor();
         lessonTwo.compareNumbers();
         System.out.println(lessonTwo.isSumInRange(15,5));
-        lessonTwo.checkNumber();
+        lessonTwo.checkNumber(0);
         lessonTwo.moreThanZero();
         lessonTwo.printStringNTimes();
         lessonTwo.LeapYear();
