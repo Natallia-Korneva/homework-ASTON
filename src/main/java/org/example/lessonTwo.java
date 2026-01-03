@@ -68,13 +68,9 @@ public class lessonTwo {
 
     // 7. Напишите метод, которому в качестве параметра передается целое число. Метод должен вернуть true, если число отрицательное,
     // и вернуть false если положительное. Замечание: ноль считаем положительным числом.
-    static boolean moreThanZero() {
-        int a = 0;
-        if (a < 0) {
-            System.out.println("true");
-        } else {
-            System.out.println("false");
-        }
+    static boolean moreThanZero(int a) {
+        System.out.println("\nЗадание 7.");
+        if (a < 0) return true;
         return false;
     }
 

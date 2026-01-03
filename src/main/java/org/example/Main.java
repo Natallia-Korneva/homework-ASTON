@@ -9,7 +9,7 @@ public class Main {
         lessonTwo.compareNumbers();
         System.out.println(lessonTwo.isSumInRange(15,5));
         lessonTwo.checkNumber(0);
-        lessonTwo.moreThanZero();
+        System.out.println(lessonTwo.moreThanZero(-9));
         lessonTwo.printStringNTimes();
         lessonTwo.LeapYear();
         lessonTwo.InvertArray();
