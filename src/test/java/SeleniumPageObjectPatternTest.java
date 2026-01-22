@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import io.qameta.allure.*;
+
 import java.time.Duration;
 
 class PaymentPage {
@@ -50,7 +52,7 @@ class PaymentPage {
         continueButton.click();
     }
 
-    public void switchToFrame(By frameLocator ,Duration timeout) {
+    public void switchToFrame(By frameLocator, Duration timeout) {
         WebDriverWait wait = new WebDriverWait(driver, timeout);
         wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(frameLocator));
     }
@@ -72,8 +74,8 @@ class PaymentPage {
         return driver.findElement(elementLocator);
     }
 
-    public void switchDefaultFrame () {
-       driver.switchTo().defaultContent();
+    public void switchDefaultFrame() {
+        driver.switchTo().defaultContent();
     }
 
     // Получаем заголовок списка элементов селекта услуги связи
@@ -113,6 +115,8 @@ public class SeleniumPageObjectPatternTest {
 
     // Тестируем название блока онлайн-пополнения
     @Test
+    @Description("Проверка названия блока")
+    @DisplayName("Онлайн пополнение без комиссии")
     public void testBlockTitle() {
         String expectedTitle = "Онлайн пополнение\nбез комиссии";
         String actualTitle = page.getOnlineReplenishmentTitle();
@@ -121,6 +125,8 @@ public class SeleniumPageObjectPatternTest {
 
     // Проверяем наличие логотипов платежных систем
     @Test
+    @Description("Проверка на наличие логотипов платежных систем")
+    @DisplayName("Платежные системы: Visa, VfsterCard, Belkart")
     public void checkPaymentLogos() {
         WebElement logosContainer = page.getPaymentLogosContainer();
         WebElement visaLogo = logosContainer.findElement(By.cssSelector("[src*='visa']"));
@@ -133,6 +139,8 @@ public class SeleniumPageObjectPatternTest {
 
     // Проверяем ссылку "Подробнее о сервисе"
     @Test
+    @Description("Проверка ссылки Подробнее о сервисе")
+    @DisplayName("Подробнее о сервисе")
     public void checkServiceDetailsLink() {
         WebElement headerCloseButtonIframe = page.getElementTFromPaymentWidgetIframe(By.cssSelector(".header__close-button"), Duration.ofSeconds(10));
         headerCloseButtonIframe.click();
@@ -142,6 +150,8 @@ public class SeleniumPageObjectPatternTest {
     //1.Проверить надписи в незаполненных полях каждого варианта оплаты услуг
     // Тестируем название блока услуги связи
     @Test
+    @Description("Проверка надписей в полях вариантов оплаты услуг")
+    @DisplayName("Существование надписей в незаполненных полях вариантов оплаты услуг")
     public void checkTitleOptionsPayment() {
         WebElement selectlist = page.getPaymentSelectlist();
         WebElement optionCommunicationServices = selectlist.findElement(By.xpath("//*[text()='Услуги связи']"));
@@ -156,19 +166,19 @@ public class SeleniumPageObjectPatternTest {
 
     //2.Для варианта «Услуги связи» проверить корректность отображения суммы (в том числе на кнопке), номера телефона,
     // а также надписей в незаполненных полях для ввода реквизитов карты, наличие иконок платёжных систем.
-
     @Test
+    @Description("Проверка корректности заполнения данных для варианта «Услуги связи»")
+    @DisplayName("Ввод реквизитов карты, наличие иконок платёжных систем в незаполненных полях")
     public void checkCommunicationServices() {
         WebElement headerCloseButtonIframe = page.getElementTFromPaymentWidgetIframe(By.cssSelector(".header__close-button"), Duration.ofSeconds(10));
         WebElement coast = page.getElement(By.xpath(String.format("//*[contains(text(), '%s')]", PaymentPage.AMOUNT)));
-//        System.out.println(coast.getText());
         WebElement telephoneNumber = page.getElement(By.xpath(String.format("//*[contains(text(), '%s')]", PaymentPage.PHONE_NUMBER)));
         WebElement cardNumber = page.getElement(By.xpath("//*[text()='Номер карты']"));
         WebElement expiries = page.getElement(By.xpath("//*[text()='Срок действия']"));
         WebElement cardHolder = page.getElement(By.xpath("//*[text()='Имя и фамилия на карте']"));
         WebElement codeCVC = page.getElement(By.xpath("//*[text()='CVC']"));
         WebElement paymentIconsVisa = page.getElement(By.cssSelector("[src*='visa']"));
-        WebElement paymentIconsMastercard =page.getElement(By.cssSelector("[src*='mastercard']"));
+        WebElement paymentIconsMastercard = page.getElement(By.cssSelector("[src*='mastercard']"));
         WebElement paymentIconsBelkart = page.getElement(By.cssSelector("[src*='belkart']"));
         WebElement paymentIconsMir = page.getElement(By.cssSelector("[src*='mir']"));
         assertNotNull(coast);
